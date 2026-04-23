@@ -4,37 +4,69 @@
     box-sizing: border-box;
 }
 
-html, body {
-    scroll-behavior: smooth;
+body {
+    font-family: Arial, sans-serif;
+    background-color: grey;
+}
+
+nav {
+    background-color: black;
+    width: 100%;
 }
 
 .t {
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    padding: 8px 16px 5px;
     align-items: center;
+    width: 100%;
+    padding: 8px 16px;
 }
 
 .left {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-shrink: 0;
 }
 
 .left img {
-    width: auto;
     height: 6vh;
+    width: auto;
     object-fit: contain;
 }
 
 #jam {
-    font-size: 30px;
+    font-size: clamp(16px, 4vw, 30px);
     font-weight: bold;
     color: white;
     white-space: nowrap;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px 16px;
+    padding: 0;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: clamp(13px, 2.5vw, 18px);
+    transition: color 0.3s;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.menu li a:hover {
+    color: yellow;
+}    white-space: nowrap;
 }
 
 nav {
