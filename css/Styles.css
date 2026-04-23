@@ -19,7 +19,7 @@ html, body {
     align-items: center;
 }
 
-.left-group {
+.left {
     display: flex;
     align-items: center;
     gap: 12px;
