@@ -90,14 +90,17 @@
           const user = document.getElementById("user").value.trim();
           const pass = document.getElementById("pass").value.trim();
           const msg = document.getElementById("pesanmsk");
+          
           if (!user || !pass) {
               msg.textContent = "Username dan Password harus diisi loh ya";
               return;
           }
+         
           if (user === "sayang" && pass === "admin") {
-        window.location.href = "rahasia.html";
-    } else {
-        msg.textContent = "Username atau password salah";
+              window.location.href = "rahasia.html";
+          } else {
+              msg.textContent = "Username atau password salah";
+          }
       }
   </script>
 
