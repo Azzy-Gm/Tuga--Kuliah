@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Azzy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* Hover & pseudo-elements (tidak bisa inline) */
+        aside a:hover {
+            background-color: #1a1a1a !important;
+            color: #3dbe62 !important;
+            padding-left: 22px !important;
+            border-left-color: #3dbe62 !important;
+        }
+        .field-group input::placeholder { color: rgba(255,255,255,0.5); }
+        .field-group input:focus {
+            border-color: #fff !important;
+            background: rgba(255,255,255,0.25) !important;
+        }
+        .btn-submit:hover {
+            background-color: transparent !important;
+            color: #fff !important;
+        }
+        .fb-link:hover img {
+            opacity: 1 !important;
+            transform: scale(1.1) !important;
+        }
+
+        /* Responsive (tidak bisa inline) */
+        @media (max-width: 640px) {
+            header { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto auto; }
+            .header-kiri { border-right: none !important; }
+            .header-tengah { grid-column: 1 / -1; border-right: none !important; border-top: 1px solid #333; }
+            .header-kanan { display: none !important; }
+            .wrapper { grid-template-columns: 1fr !important; }
+            aside { flex-direction: row !important; flex-wrap: wrap; padding: 8px !important; border-right: none !important; border-bottom: 2px solid #333; }
+            aside .menu-label { display: none !important; }
+            aside a { padding: 8px 12px !important; border-left: none !important; border-bottom: 2px solid transparent; }
+            aside a:hover { padding-left: 12px !important; border-bottom-color: #3dbe62 !important; }
+            .welcome-section { padding: 24px 20px !important; }
+            .login-section { padding: 24px 20px !important; }
+            .login-row { flex-direction: column !important; }
+            footer { grid-template-columns: 1fr 1fr !important; }
+            .footer-kosong { display: none !important; }
+            .footer-tengah { border-right: none !important; }
+        }
+    </style>
+</head>
+<body style="font-family:'Syne',sans-serif; background-color:#e8e8e8; min-height:100vh; display:flex; flex-direction:column;">
+
+    <!-- ══════════ HEADER ══════════ -->
+    <header style="display:grid; grid-template-columns:200px 1fr 200px; border-bottom:2px solid #c0c0c0; background-color:#000000; min-height:72px;">
+
+        <!-- Header Kiri -->
+        <div class="header-kiri" style="display:flex; align-items:center; gap:10px; padding:10px 16px; border-right:2px solid #333;">
+            <a href="ke1.html">
+                <img src="img/Dance.gif" alt="Azzy" style="height:46px; width:auto;">
+            </a>
+            <span id="jam" style="font-family:'Space Mono',monospace; font-size:clamp(13px,2vw,18px); font-weight:700; color:#3dbe62; white-space:nowrap; letter-spacing:1px;">00:00:00</span>
+        </div>
+
+        <!-- Header Tengah -->
+        <div class="header-tengah" style="display:flex; align-items:center; justify-content:center; padding:10px 20px; border-right:2px solid #333;">
+            <h1 style="font-size:clamp(14px,2.5vw,22px); font-weight:800; color:#f5f5f5; letter-spacing:2px; text-transform:uppercase;">
+                Website <span style="color:#3dbe62;">Azzy</span>
+            </h1>
+        </div>
+
+        <!-- Header Kanan -->
+        <div class="header-kanan" style="display:flex; align-items:center; justify-content:center; padding:10px 16px;">
+            <p style="font-size:12px; color:#888; text-align:center; line-height:1.5; font-family:'Space Mono',monospace;">Latihan Web<br>Development</p>
+        </div>
+
+    </header>
+
+    <!-- ══════════ WRAPPER ══════════ -->
+    <div class="wrapper" style="display:grid; grid-template-columns:200px 1fr; flex:1; border-bottom:2px solid #c0c0c0;">
+
+        <!-- ── Menu Kiri (Sidebar) ── -->
+        <aside style="background-color:#0a0a0a; border-right:2px solid #333; padding:24px 0; display:flex; flex-direction:column; gap:4px;">
+            <div class="menu-label" style="font-size:10px; font-weight:700; letter-spacing:2px; color:#555; text-transform:uppercase; padding:0 16px 12px; border-bottom:1px solid #222; margin-bottom:8px;">Navigasi</div>
+            <a href="ke1.html"      style="display:block; text-decoration:none; color:#ccc; font-size:13px; font-weight:600; padding:10px 16px; letter-spacing:1px; transition:background 0.2s,color 0.2s,padding-left 0.2s; border-left:3px solid transparent;">K1</a>
+            <a href="ke2.html" target="_blank" style="display:block; text-decoration:none; color:#ccc; font-size:13px; font-weight:600; padding:10px 16px; letter-spacing:1px; transition:background 0.2s,color 0.2s,padding-left 0.2s; border-left:3px solid transparent;">K2</a>
+            <a href="ke3.html" target="_blank" style="display:block; text-decoration:none; color:#ccc; font-size:13px; font-weight:600; padding:10px 16px; letter-spacing:1px; transition:background 0.2s,color 0.2s,padding-left 0.2s; border-left:3px solid transparent;">K3</a>
+            <a href="index.html"    style="display:block; text-decoration:none; color:#ccc; font-size:13px; font-weight:600; padding:10px 16px; letter-spacing:1px; transition:background 0.2s,color 0.2s,padding-left 0.2s; border-left:3px solid transparent;">Refresh Page</a>
+        </aside>
+
+        <!-- ── Bagian Isi ── -->
+        <main style="background-color:#f5f5f5; display:flex; flex-direction:column;">
+
+            <!-- Welcome -->
+            <section class="welcome-section" style="flex:1; padding:40px 48px; display:flex; flex-direction:column; justify-content:center; gap:20px;">
+                <span style="display:inline-block; background-color:#1e7e34; color:#fff; font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:4px 10px; border-radius:2px; width:fit-content;">Selamat Datang</span>
+                <h2 style="font-size:clamp(18px,3vw,28px); font-weight:800; color:#111; line-height:1.2;">Website Azzy</h2>
+                <div style="height:2px; background:linear-gradient(to right,#1e7e34,transparent); margin:8px 0; max-width:200px;"></div>
+                <p style="font-size:clamp(13px,1.5vw,15px); color:#444; line-height:1.8; max-width:580px;">
+                    Ini adalah halaman utama dari website Azzy. Web ini dibuat sebagai latihan dari proses pembuatan
+                    website mulai dari dasar hingga profesional. Azzy berkomitmen untuk memberikan informasi yang
+                    akurat dan layanan terbaik kepada pengunjung website.
+                </p>
+                <p style="font-size:clamp(13px,1.5vw,15px); color:#444; line-height:1.8; max-width:580px;">
+                    Terima kasih telah mengunjungi website ini, silahkan login atau tekan menu di sebelah kiri
+                    untuk melanjutkan dan mengetahui lebih banyak konten yang ada.
+                </p>
+            </section>
+
+            <!-- Login -->
+            <section class="login-section" style="background:linear-gradient(135deg,#1e7e34,#2da44e); padding:32px 48px; display:flex; flex-direction:column; gap:16px;">
+                <h3 style="font-size:16px; font-weight:800; color:#fff; letter-spacing:2px; text-transform:uppercase;">Login</h3>
+                <div class="login-row" style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-end;">
+                    <div class="field-group" style="display:flex; flex-direction:column; gap:5px; flex:1; min-width:160px;">
+                        <label for="user" style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.8);">Username</label>
+                        <input type="text" id="user" name="user" placeholder="Masukkan username"
+                            style="padding:10px 14px; font-size:14px; font-family:'Syne',sans-serif; border-radius:4px; border:1.5px solid rgba(255,255,255,0.4); background:rgba(255,255,255,0.15); color:#fff; outline:none; transition:border-color 0.2s,background 0.2s;">
+                    </div>
+                    <div class="field-group" style="display:flex; flex-direction:column; gap:5px; flex:1; min-width:160px;">
+                        <label for="pass" style="font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.8);">Password</label>
+                        <input type="password" id="pass" name="pass" placeholder="Masukkan password"
+                            style="padding:10px 14px; font-size:14px; font-family:'Syne',sans-serif; border-radius:4px; border:1.5px solid rgba(255,255,255,0.4); background:rgba(255,255,255,0.15); color:#fff; outline:none; transition:border-color 0.2s,background 0.2s;">
+                    </div>
+                    <button class="btn-submit" type="button" onclick="gass()"
+                        style="padding:11px 28px; font-size:13px; font-weight:800; font-family:'Syne',sans-serif; letter-spacing:1.5px; text-transform:uppercase; cursor:pointer; border:2px solid #fff; border-radius:4px; background-color:#fff; color:#1e7e34; transition:background 0.2s,color 0.2s; white-space:nowrap; align-self:flex-end;">
+                        Submit
+                    </button>
+                </div>
+                <div id="pesanmsk" style="font-size:12px; color:#ffcccc; font-weight:600; min-height:16px;"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer style="display:grid; grid-template-columns:200px 1fr 200px; border-top:2px solid #c0c0c0; background-color:#0a0a0a; min-height:48px;">
+
+        <!-- Footer Kiri — Logo Facebook -->
+        <div class="footer-kosong" style="display:flex; align-items:center; justify-content:center; border-right:2px solid #333;">
+            <a href="https://web.facebook.com/zaki.982875" target="_blank" class="fb-link"
+                style="display:flex; align-items:center; gap:8px; text-decoration:none;">
+                <img src="img/facebook.gif" alt="Facebook"
+                    style="height:28px; width:28px; object-fit:contain; border-radius:6px; opacity:0.7; transition:opacity 0.2s, transform 0.2s;">
+                <span style="font-size:11px; color:#555; font-family:'Space Mono',monospace; white-space:nowrap;">My Facebook</span>
+            </a>
+        </div>
+
+        <!-- Footer Tengah -->
+        <div class="footer-tengah" style="display:flex; align-items:center; justify-content:center; padding:10px 20px; border-right:2px solid #333;">
+            <p style="font-size:11px; color:#666; letter-spacing:1px; font-family:'Space Mono',monospace;">&copy; 2026 Website Azzy — Latihan Web Development</p>
+        </div>
+
+        <!-- Footer Kanan -->
+        <div class="footer-kanan" style="display:flex; align-items:center; justify-content:center; padding:10px 16px;">
+            <p style="font-size:11px; color:#555; font-family:'Space Mono',monospace;">v1.0</p>
+        </div>
+
+    </footer>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const h = now.getHours().toString().padStart(2, '0');
+            const m = now.getMinutes().toString().padStart(2, '0');
+            const s = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById("jam").textContent = `${h}:${m}:${s}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        if (performance.navigation.type === 1) {
+            window.location.href = "index.html";
+        }
+
+        function gass() {
+            const user = document.getElementById("user").value.trim();
+            const pass = document.getElementById("pass").value.trim();
+            const msg  = document.getElementById("pesanmsk");
+
+            if (!user || !pass) {
+                msg.textContent = "Username dan Password harus diisi loh ya";
+                return;
+            }
+
+            if (user === "sayang" && pass === "admin") {
+                window.location.href = "rahasia.html";
+            } else {
+                msg.textContent = "Username atau Password salah";
+                setTimeout(() => {
+                    alert("Coba ini: \nUsername: sayang \nPassword: admin");
+                }, 2000);
+            }
+        }
+    </script>
+
+</body>
+</html>
